@@ -6,12 +6,11 @@
 The __let__ statement declares a block scope local variable, optionally initializing it to a value. [Let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 
 ```js
+'use strict';
 describe("using let", function() {
-
   it("block scoping", function() {
-
     var structure = function(args) {
-      if(args){
+      if ( args ) {
         let x = 2;
         return x;
       }
@@ -21,11 +20,10 @@ describe("using let", function() {
     expect(result).toBe(2);
   });
 
-  it("block scope with for", function(){
+  it("block scope with for", function() {
+    var structure = function() {
 
-    var structure = function(){
-
-      for(let i = 0; i< 10; i++){
+      for(let i = 0; i< 10; i++) {
       }
       
       /* return i won't work */
@@ -47,7 +45,7 @@ The __destructuring__ assignment syntax is a JavaScript expression that makes it
 describe("Destructuring assignment", function() {  
   it("destructure arrays", function() {
 
-    var structure = function(){
+    var structure = function() {
       return ["Element 1", "Element 2", "Element 3"];
     };
 
@@ -65,8 +63,8 @@ describe("Destructuring assignment", function() {
 An __arrow function__ expression (also known as fat arrow function) has a shorter syntax compared to function expressions and lexically binds the this value. Arrow functions are always anonymous.
 
 ```js
+'use strict';
 describe("Arrow Functions", function() {
-
 	it("define a function", function() {
 
 		let add = (x, y) => {
