@@ -38,6 +38,7 @@ describe("using let", function() {
 
 });
 ```
+
 ## Destructuring Assignment
 The __destructuring__ assignment syntax is a JavaScript expression that makes it possible to extract data from arrays or objects using a syntax that mirrors the construction of array and object literals.
 
@@ -60,9 +61,53 @@ describe("Destructuring assignment", function() {
 });
 ```
 
+## Arrow functions
+An __arrow function__ expression (also known as fat arrow function) has a shorter syntax compared to function expressions and lexically binds the this value. Arrow functions are always anonymous.
+
+```js
+describe("Arrow Functions", function() {
+
+	it("define a function", function() {
+
+		let add = (x, y) => {
+			let sum = x + y;
+			return sum;
+		};
+
+		let square = x => x * x;
+		let five = () => 5;
+
+		expect(square(add(2,five()))).toBe(49);
+
+	});
+
+	it("can be used with array methods", function() {
+  	var numbers = [1,2,3,4],
+  			amount = 0;
+
+		numbers.forEach(number => amount += number);
+		expect(amount).toBe(10);
+
+		var four = numbers.map(number => number * 4);
+		expect(four).toEqual([4,8,12,16]);
+	});
+
+	it("lexically binds the this value", function(finished) {
+		this.name = "Diogo";
+
+		setTimeout(() => {
+			expect(this.name).toBe("Diogo");
+			finished();
+		}, 10);
+		
+	});
+
+});
+```
 
 ## References
 * [ES6 Features](https://github.com/lukehoban/es6features)
+* [MDN](https://developer.mozilla.org)
 
 
 
