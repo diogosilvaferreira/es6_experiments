@@ -108,21 +108,18 @@ The __class__ syntax is __not__ introducing a new object-oriented inheritance mo
 
 ```js
 'use strict';
-describe("define class", function(){
-
-	it("can create a class", function(){
+describe("define class", function() {
+	it("can create a class", function() {
 
 		class Vehicle {
-			
 			getModel() {
 				return "HB20!";
 			}
-
 			getProdutor() {
 				return "Hyundai";
 			}
 		}
-
+		
 		let v = new Vehicle();
 
 		expect(v.getModel()).toBe("HB20!");
@@ -130,12 +127,35 @@ describe("define class", function(){
 		expect(Vehicle.prototype.getModel.call(v)).toBe("HB20!");
 
     //if you want to export your class
-    export {Vehicle}
-
+    export { Vehicle }
     //import Class
-    import {Vehicle} from './Vehicle';
-
+    import { Vehicle } from './Vehicle';
 	});
+	
+	it("getters and setters", function() {
+    class Vehicle {
+        constructor(produtor) {
+        this.produtor = produtor;
+      }
+
+      model() {
+        return "HB20!";
+      }
+
+      get produtor() {
+        return this._produtor.toUpperCase();
+      }
+
+      set produtor(newValue) {
+        this._produtor = newValue;
+      }
+    }
+
+    let v1 = new Vehicle("Hyundai");
+    
+    expect(v1.produtor).toBe("Hyundai");
+
+  });
 
 });
 ```
