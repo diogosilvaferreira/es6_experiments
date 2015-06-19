@@ -103,6 +103,44 @@ describe("Arrow Functions", function() {
 });
 ```
 
+## Classes
+The __class__ syntax is __not__ introducing a new object-oriented inheritance model to JavaScript. JS classes provide a much simpler and clearer syntax to create objects and dealing with inheritance.
+
+```js
+'use strict';
+describe("define class", function(){
+
+	it("can create a class", function(){
+
+		class Vehicle {
+			
+			getModel() {
+				return "HB20!";
+			}
+
+			getProdutor() {
+				return "Hyundai";
+			}
+		}
+
+		let v = new Vehicle();
+
+		expect(v.getModel()).toBe("HB20!");
+		expect(v.getProdutor()).toBe("Hyundai");
+		expect(Vehicle.prototype.getModel.call(v)).toBe("HB20!");
+
+    //if you want to export your class
+    export {Vehicle}
+
+    //import Class
+    import {Vehicle} from './Vehicle';
+
+	});
+
+});
+```
+
+
 ## References
 * [ES6 Features](https://github.com/lukehoban/es6features)
 * [MDN](https://developer.mozilla.org)
