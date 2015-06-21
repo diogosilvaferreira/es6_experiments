@@ -3,7 +3,7 @@
 *All examples require [jasmine](https://github.com/jasmine/jasmine) for tests*
 
 ## Let
-The __let__ statement declares a block scope local variable, optionally initializing it to a value. [Let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+The __let__ statement declares a block scope local variable, optionally initializing it to a value.
 
 ```js
 'use strict';
@@ -145,7 +145,7 @@ describe("define class", function() {
       get produtor() {
         return this._produtor.toUpperCase();
       }
-
+      
       set produtor(newValue) {
         this._produtor = newValue;
       }
@@ -156,10 +156,33 @@ describe("define class", function() {
     expect(v1.produtor).toBe("Hyundai");
 
   });
+  
+  it("override methods", function() {
+    class Car extends Vehicle {     
+      constructor(title, name) {
+        super(name);
+        this._title = title;        
+      }
 
+      get title() {
+        return this._title;
+      }
+
+      model() {
+        return "Onix";
+      }
+
+    }
+    
+    let c1 = new Car("Sandeiro", "Lancer");
+    let v1 = new Vehicle("Corola");
+
+    expect(v1.model()).toBe("HB20!");
+    expect(c1.model()).toBe("Onix");
+  });
+  
 });
 ```
-
 
 ## References
 * [ES6 Features](https://github.com/lukehoban/es6features)
