@@ -65,40 +65,40 @@ An __arrow function__ expression (also known as fat arrow function) has a shorte
 ```js
 'use strict';
 describe("Arrow Functions", function() {
-	it("define a function", function() {
+  it("define a function", function() {
 
-		let add = (x, y) => {
-			let sum = x + y;
-			return sum;
-		};
+    let add = (x, y) => {
+      let sum = x + y;
+      return sum;
+    };
 
-		let square = x => x * x;
-		let five = () => 5;
+    let square = x => x * x;
+    let five = () => 5;
 
-		expect(square(add(2,five()))).toBe(49);
+    expect(square(add(2,five()))).toBe(49);
 
-	});
+  });
 
-	it("can be used with array methods", function() {
-  	var numbers = [1,2,3,4],
-  			amount = 0;
+  it("can be used with array methods", function() {
+    var numbers = [1,2,3,4],
+        amount = 0;
 
-		numbers.forEach(number => amount += number);
-		expect(amount).toBe(10);
+    numbers.forEach(number => amount += number);
+    expect(amount).toBe(10);
 
-		var four = numbers.map(number => number * 4);
-		expect(four).toEqual([4,8,12,16]);
-	});
+    var four = numbers.map(number => number * 4);
+    expect(four).toEqual([4,8,12,16]);
+  });
 
-	it("lexically binds the this value", function(finished) {
-		this.name = "Diogo";
+  it("lexically binds the this value", function(finished) {
+    this.name = "Diogo";
 
-		setTimeout(() => {
-			expect(this.name).toBe("Diogo");
-			finished();
-		}, 10);
-		
-	});
+    setTimeout(() => {
+      expect(this.name).toBe("Diogo");
+      finished();
+    }, 10);
+    
+  });
 
 });
 ```
@@ -109,30 +109,30 @@ The __class__ syntax is __not__ introducing a new object-oriented inheritance mo
 ```js
 'use strict';
 describe("define class", function() {
-	it("can create a class", function() {
+  it("can create a class", function() {
 
-		class Vehicle {
-			getModel() {
-				return "HB20!";
-			}
-			getProdutor() {
-				return "Hyundai";
-			}
-		}
-		
-		let v = new Vehicle();
+    class Vehicle {
+      getModel() {
+        return "HB20!";
+      }
+      getProdutor() {
+        return "Hyundai";
+      }
+    }
+    
+    let v = new Vehicle();
 
-		expect(v.getModel()).toBe("HB20!");
-		expect(v.getProdutor()).toBe("Hyundai");
-		expect(Vehicle.prototype.getModel.call(v)).toBe("HB20!");
+    expect(v.getModel()).toBe("HB20!");
+    expect(v.getProdutor()).toBe("Hyundai");
+    expect(Vehicle.prototype.getModel.call(v)).toBe("HB20!");
 
     //if you want to export your class
     export { Vehicle }
     //import Class
     import { Vehicle } from './Vehicle';
-	});
-	
-	it("getters and setters", function() {
+  });
+  
+  it("getters and setters", function() {
     class Vehicle {
         constructor(produtor) {
         this.produtor = produtor;
@@ -158,6 +158,24 @@ describe("define class", function() {
   });
   
   it("override methods", function() {
+    class Vehicle {
+        constructor(produtor) {
+        this.produtor = produtor;
+      }
+
+      model() {
+        return "HB20!";
+      }
+
+      get produtor() {
+        return this._produtor.toUpperCase();
+      }
+      
+      set produtor(newValue) {
+        this._produtor = newValue;
+      }
+    }
+    
     class Car extends Vehicle {     
       constructor(title, name) {
         super(name);
