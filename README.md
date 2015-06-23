@@ -76,7 +76,6 @@ describe("Arrow Functions", function() {
     let five = () => 5;
 
     expect(square(add(2,five()))).toBe(49);
-
   });
 
   it("can be used with array methods", function() {
@@ -125,11 +124,6 @@ describe("define class", function() {
     expect(v.getModel()).toBe("HB20!");
     expect(v.getProdutor()).toBe("Hyundai");
     expect(Vehicle.prototype.getModel.call(v)).toBe("HB20!");
-
-    //if you want to export your class
-    export { Vehicle }
-    //import Class
-    import { Vehicle } from './Vehicle';
   });
   
   it("getters and setters", function() {
@@ -154,7 +148,6 @@ describe("define class", function() {
     let v1 = new Vehicle("Hyundai");
     
     expect(v1.produtor).toBe("Hyundai");
-
   });
   
   it("override methods", function() {
