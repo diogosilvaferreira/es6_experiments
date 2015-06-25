@@ -2,7 +2,14 @@
 
 *All examples require [jasmine](https://github.com/jasmine/jasmine) for tests*
 
-## Let
+ES6 experiments includes the following features:
+- [Let](#let)
+- [Destructuring Assignment](#destructuring-assignment)
+- [Arrow functions](#arrow-functions)
+- [Classes](#classes)
+- [Spread](#spread)
+
+### Let
 The __let__ statement declares a block scope local variable, optionally initializing it to a value.
 
 ```js
@@ -37,7 +44,7 @@ describe("using let", function() {
 });
 ```
 
-## Destructuring Assignment
+### Destructuring Assignment
 The __destructuring__ assignment syntax is a JavaScript expression that makes it possible to extract data from arrays or objects using a syntax that mirrors the construction of array and object literals.
 
 ```js
@@ -59,7 +66,7 @@ describe("Destructuring assignment", function() {
 });
 ```
 
-## Arrow functions
+### Arrow functions
 An __arrow function__ expression (also known as fat arrow function) has a shorter syntax compared to function expressions and lexically binds the this value. Arrow functions are always anonymous.
 
 ```js
@@ -102,7 +109,7 @@ describe("Arrow Functions", function() {
 });
 ```
 
-## Classes
+### Classes
 The __class__ syntax is __not__ introducing a new object-oriented inheritance model to JavaScript. JS classes provide a much simpler and clearer syntax to create objects and dealing with inheritance.
 
 ```js
@@ -195,7 +202,7 @@ describe("define class", function() {
 });
 ```
 
-## Spread
+### Spread
 The __spread__ operator allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected.
 
 ```js
@@ -224,16 +231,3 @@ describe("the spread operator", function() {
 ## References
 * [ES6 Features](https://github.com/lukehoban/es6features)
 * [MDN](https://developer.mozilla.org)
-
-
-
-
-
-
-
-
-
-
-
-
-
