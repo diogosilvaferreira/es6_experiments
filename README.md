@@ -260,3 +260,4 @@ describe("generators", function() {
 ## References
 * [ES6 Features](https://github.com/lukehoban/es6features)
 * [MDN](https://developer.mozilla.org)
+* [Fundamentals for ES6 course](https://github.com/joeeames/ES6FundamentalsCourseFiles)
