@@ -8,6 +8,7 @@ ES6 experiments includes the following features:
 - [Arrow functions](#arrow-functions)
 - [Classes](#classes)
 - [Spread](#spread)
+- [Generators](#generators)
 
 ### Let
 The __let__ statement declares a block scope local variable, optionally initializing it to a value.
@@ -224,6 +225,34 @@ describe("the spread operator", function() {
 
 		expect(b).toEqual([1,2,3,4,5,6,7,8,9]);
 	});
+
+});
+```
+
+### Generators
+The __generators__ are functions which can be excited and later re-entered. Their context (variable bindings) will be saved across re-entrances.
+
+```js
+describe("generators", function() {
+  it("build an iterable", function() {
+    let numbers = function*() {
+      for(let i = 0; i <= 6; i++) {
+
+        yield i;
+
+        console.log(i);
+      }
+    };
+
+    let sum = 0;
+
+    for(let n of numbers()){
+      sum += n;
+      console.log("generator" + sum);
+    }
+    
+    expect(sum).toBe(21);
+  });
 
 });
 ```
