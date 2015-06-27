@@ -8,6 +8,7 @@ ES6 experiments includes the following features:
 - [Arrow functions](#arrow-functions)
 - [Classes](#classes)
 - [Spread](#spread)
+- [Iterators For..Of](#iterators-forof)
 - [Generators](#generators)
 
 ### Let
@@ -225,6 +226,34 @@ describe("the spread operator", function() {
 
 		expect(b).toEqual([1,2,3,4,5,6,7,8,9]);
 	});
+
+});
+```
+
+### Iterators For...Of
+The __for...of__ statement creates a loop Iterating over iterable objects (including Array, Map, Set, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property.
+
+```js
+'use strict';
+describe("for of", function() {
+
+  it("working with iteratables", function() {
+
+    let sum = 0;
+    let arr = [3,4,5,6];
+    arr.foo = "test";
+
+    //for...of iterates over property values
+    for(let i of arr) {      
+      sum += i;
+    }
+    //for...in iterates over property names
+    for (let i in arr) {
+      console.log(i);
+    }
+
+    expect(sum).toBe(18);
+  });
 
 });
 ```
