@@ -208,6 +208,7 @@ describe("define class", function() {
 The __spread__ operator allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected.
 
 ```js
+'use strict';
 describe("the spread operator", function() {
 	it("spread an array parameters", function() {
 
@@ -262,6 +263,7 @@ describe("for of", function() {
 The __generators__ are functions which can be excited and later re-entered. Their context (variable bindings) will be saved across re-entrances.
 
 ```js
+'use strict';
 describe("generators", function() {
   it("build an iterable", function() {
     let numbers = function*() {
