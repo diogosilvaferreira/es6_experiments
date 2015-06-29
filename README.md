@@ -244,13 +244,10 @@ describe("for of", function() {
     let arr = [3,4,5,6];
     arr.foo = "test";
 
+    //for...in iterates over property names ex: for (let i in arr) { console.log(i); }
     //for...of iterates over property values
-    for(let i of arr) {      
+    for(let i of arr) {
       sum += i;
-    }
-    //for...in iterates over property names
-    for (let i in arr) {
-      console.log(i);
     }
 
     expect(sum).toBe(18);
