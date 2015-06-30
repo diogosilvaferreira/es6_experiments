@@ -1,8 +1,8 @@
-# <img src="http://www.w3devcampus.com/wp-content/uploads/logoAndOther/logo_JavaScript.png" width="100"> ECMAScript 6 Experiments
+# <img src="http://www.w3devcampus.com/wp-content/uploads/logoAndOther/logo_JavaScript.png" width="100"> ECMAScript 2015 Experiments
 
 *All examples require [jasmine](https://github.com/jasmine/jasmine) for tests*
 
-ES6 experiments includes the following features:
+ECMAScript 2015 experiments includes the following features:
 - [Let](#let)
 - [Destructuring Assignment](#destructuring-assignment)
 - [Arrow functions](#arrow-functions)
