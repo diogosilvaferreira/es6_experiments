@@ -36,7 +36,7 @@ describe("using let", function() {
       }
       
       /* return i won't work */
-      return 0;   
+      return 0;
     };
 
     var result = structure();
@@ -210,23 +210,23 @@ The __spread__ operator allows an expression to be expanded in places where mult
 ```js
 'use strict';
 describe("the spread operator", function() {
-	it("spread an array parameters", function() {
+  it("spread an array parameters", function() {
 
-		let foo = function(x, y, z) {
-			return x + y + z;
-		}
+    let foo = function(x, y, z) {
+      return x + y + z;
+    }
 
-		var result = foo(...[1, 2, 3]);
-		
-		expect(result).toBe(6); 
-	});
+    var result = foo(...[1, 2, 3]);
+    
+    expect(result).toBe(6); 
+  });
 
-	it("can build arrays", function() {
-		var a = [4, 5, 6];
-		var b = [1, 2, 3, ...a, 7, 8, 9];
+  it("can build arrays", function() {
+    var a = [4, 5, 6];
+    var b = [1, 2, 3, ...a, 7, 8, 9];
 
-		expect(b).toEqual([1,2,3,4,5,6,7,8,9]);
-	});
+    expect(b).toEqual([1,2,3,4,5,6,7,8,9]);
+  });
 
 });
 ```
@@ -255,19 +255,19 @@ describe("for of", function() {
 
 'use strict';
 describe("iterables", function() {
-	it("iterators at a low level", function() {
+  it("iterators at a low level", function() {
     let numbers = [1,2,3,4,5];
-		let sum = 0;
-		let iterator = numbers[Symbol.iterator]();
-		let next = iterator.next();
+    let sum = 0;
+    let iterator = numbers[Symbol.iterator]();
+    let next = iterator.next();
     
-		while(!next.done) {
-			sum += next.value;
-			next = iterator.next();
-	  }
-	  
-		expect(sum).toBe(15);
-	});
+    while(!next.done) {
+      sum += next.value;
+      next = iterator.next();
+    }
+    
+    expect(sum).toBe(15);
+  });
 
 });
 ```
