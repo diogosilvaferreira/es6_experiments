@@ -254,6 +254,23 @@ describe("for of", function() {
   });
 
 });
+
+'use strict';
+describe("iterables", function() {
+	it("iterators at a low level", function() {
+    let numbers = [1,2,3,4,5];
+		let sum = 0;
+		let iterator = numbers[Symbol.iterator]();
+		let next = iterator.next();
+    
+		while(!next.done) {
+			sum += next.value;
+			next = iterator.next();
+	   }
+		expect(sum).toBe(15);
+	});
+
+});
 ```
 
 ### Generators
