@@ -237,13 +237,11 @@ The __for...of__ statement creates a loop Iterating over iterable objects (inclu
 ```js
 'use strict';
 describe("for of", function() {
-
   it("working with iteratables", function() {
-
     let sum = 0;
     let arr = [3,4,5,6];
     arr.foo = "test";
-
+    
     //for...in iterates over property names ex: for (let i in arr) { console.log(i); }
     //for...of iterates over property values
     for(let i of arr) {
@@ -266,7 +264,8 @@ describe("iterables", function() {
 		while(!next.done) {
 			sum += next.value;
 			next = iterator.next();
-	   }
+	  }
+	  
 		expect(sum).toBe(15);
 	});
 
