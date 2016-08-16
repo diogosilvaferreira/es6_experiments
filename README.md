@@ -1,6 +1,6 @@
 # <img src="http://www.w3devcampus.com/wp-content/uploads/logoAndOther/logo_JavaScript.png" width="100"> ECMAScript 2015 Experiments
 
-*All examples require [jasmine](https://github.com/jasmine/jasmine) for tests*
+*All examples require [jasmine](http://jasmine.github.io) for tests*
 
 ECMAScript 2015 experiments includes the following features:
 - [Let](#let)
